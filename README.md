@@ -10,14 +10,10 @@
 
 # Knight's Tour Problem
 ### Definition
-```
 What is this problem about?
-```
 
 ### Algorithm
-```
 What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
-```
 
 ### Code
 ```
@@ -39,14 +35,10 @@ Include screenshot if possible.
 
 # Travelling Salesman Problem
 ### Definition
-```
 What is this problem about?
-```
 
 ### Algorithm
-```
 What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
-```
 
 ### Code
 ```
@@ -68,14 +60,10 @@ Include screenshot if possible.
 
 # Chinese Postman Problem
 ### Definition
-```
 What is this problem about?
-```
 
 ### Algorithm
-```
 What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
-```
 
 ### Code
 ```
