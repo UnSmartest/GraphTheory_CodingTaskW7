@@ -35,7 +35,18 @@ Include screenshot if possible.
 
 # Travelling Salesman Problem
 ### Definition
-What is this problem about?
+The Travelling Salesman Problem (TSP) is a classic optimization problem in computer science and mathematics.In other words, a salesman needs to visit several cities once and return home, and he wants to minimize the total travel cost or distance.
+Formal Definition
+
+Given:
+
+A set of n vertices (cities).
+A distance (or cost) matrix C[i][j] representing the distance from city i to city j.
+
+Find:
+
+A Hamiltonian cycle (a cycle that visits every city exactly once and returns to the start)
+with minimum total cost
 
 ### Algorithm
 What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
