@@ -10,7 +10,7 @@
 
 # Knight's Tour Problem
 ### Definition
-What is this problem about?
+In a chessboard, the knight moves in a capital L shape(two tiles in a direction then one tile perpendicular). The knight piece's move
 
 ### Algorithm
 What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
