@@ -17,7 +17,7 @@ Due to Python's reputation as a simple programming language, we chose this langu
 
 So, how does Warnsdorff's Algorithm work? His algorithm uses a heuristic function that checks for the next-hop tile with the least possible moves onwards. By stepping onto tiles with the least possible paths, we can eliminate risky tiles that can lead to a dead-end if left for last. In our code, we first ask for the user's input to initialize our chessboard by asking the chessboard's dimension and the knight's starting tile. Then, we check which tiles can the knight go to and call a function that checks how many tiles can the next-tile go to. The value of the function is returned and added into an array, which will be sorted ascendingly so we can get the next-hop tile with the least possible moves. After finding the next-hop tile with the least possible moves, we set the current tile as explored and set the current tile to the next-hop tile. This process repeats for n^2-1 times, n being the dimension of the chessboard.
 
-The output's print format is essentially the coordinate of the tiles the knight steps onto. Each line holds the coordinate of the knight's current tile.
+The output's print format is essentially the coordinate of the tiles the knight steps onto. Each line holds the coordinate of the knight's current tile. The first number in each line represents the row and the second number in each line represents the column.
 
 ### Code
 ```
