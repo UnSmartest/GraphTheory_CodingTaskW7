@@ -16,7 +16,7 @@ What is this problem about?
 
 ### Algorithm
 ```
-What algorithm are we using and how does it work?
+What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
 ```
 
 ### Code
@@ -45,7 +45,7 @@ What is this problem about?
 
 ### Algorithm
 ```
-What algorithm are we using and how does it work?
+What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
 ```
 
 ### Code
@@ -74,7 +74,7 @@ What is this problem about?
 
 ### Algorithm
 ```
-What algorithm are we using and how does it work?
+What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
 ```
 
 ### Code
