@@ -140,7 +140,8 @@ This is also known as a Hamiltonian cycle. In other words, we're asked to find t
 - next e lines consists of set of number denoting: name of edge, two edges that it connects, and its cost
 - last line denotes the starting point (and finishing point) of the TSP/CPP solution.
 - it is illustrated as below:
-(graph example png)
+<img width="535" height="421" alt="graph example" src="https://github.com/user-attachments/assets/16d4de99-2ea3-4bff-a85f-bac4e8ba9590" />
+
 
 ### Ouptut:
 
