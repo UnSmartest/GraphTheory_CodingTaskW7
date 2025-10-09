@@ -126,13 +126,15 @@ This is also known as a Hamiltonian cycle. In other words, we're asked to find t
 
 ### Input:
 
-`3 `
-`4 `
-`0 1 2 10 `
-`1 2 3 5`
-`2 3 1 7 `
-`3 3 1 2 `
-`1`
+```
+3 
+4 
+0 1 2 10 
+1 2 3 5
+2 3 1 7 
+3 3 1 2 
+1
+```
 
 - first two lines defines the number of nodes n and number of edges e respectively
 - next e lines consists of set of number denoting: name of edge, two edges that it connects, and its cost
@@ -142,13 +144,15 @@ This is also known as a Hamiltonian cycle. In other words, we're asked to find t
 
 ### Ouptut:
 
-`Cost: 17`
-`Route: 0, 1, 3`
+```
+Cost: 17
+Route: 0, 1, 3
+```
 
 - basically, the output of the route will consist of the edges to take that results in the path with the most minimum cost
 
 
-## Our solution + explanation:
+## Solution + explanation:
 In solving TSP, there are several methods we can use, such as:
 
 ### 1. Exact methods:
