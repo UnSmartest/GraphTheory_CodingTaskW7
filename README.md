@@ -20,7 +20,7 @@ So, how does Warnsdorff's Algorithm work? His algorithm uses a heuristic functio
 The output's print format is essentially the coordinate of the tiles the knight steps onto. Each line holds the coordinate of the knight's current tile. The first number in each line represents the row and the second number in each line represents the column.
 
 ### Code
-```
+```python
 moves = [(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1),(-2,-1),(-1,-2)]
 
 def lineSeperator():
