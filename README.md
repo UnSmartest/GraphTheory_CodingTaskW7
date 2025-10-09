@@ -247,7 +247,6 @@ However, if the graph has one or more odd-degree vertices, it is not Eulerian, m
 Once the graph has been balanced, we apply Hierholzer’s algorithm to find the Eulerian circuit by traversing all edges and backtracking when necessary. This ensures that every edge is visited exactly once, resulting in the shortest possible closed route that covers every edge in the network at least once and returns to the starting point
 ### Code
 ```
-Insert code here.
 #include <iostream>
 #include <vector>
 #include <queue>
