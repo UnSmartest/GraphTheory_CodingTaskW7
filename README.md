@@ -176,6 +176,10 @@ Since the Brute-Force method isn't a viable solution for large inputs, and given
 
 ## Code: 
 
+The algorithm starts from the specified starting city and explores all possible routes to visit the remaining cities. As it builds each path, it keeps track of the total cost so far. If the current path already exceeds the best solution found, it prunes that path, meaning it stops exploring it further, because it cannot lead to a better solution. This pruning is what makes Branch and Bound more efficient than checking every possible route blindly.
+
+Whenever the algorithm reaches a path that has visited all cities, it checks if it can return to the starting city to form a complete cycle. If the total cost of this cycle is lower than any previously found path, the algorithm updates the best solution. By recursively branching into new paths and bounding the non-promising ones, the algorithm eventually finds the optimal route with the minimum cost.
+
 ```python
 from math import inf
 
