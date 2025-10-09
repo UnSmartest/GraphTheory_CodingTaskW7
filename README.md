@@ -112,38 +112,121 @@ for iteration in range(2, boardSize*boardSize+1):
 
 <br><br>
 
-# Travelling Salesman Problem
-### Definition
-The Travelling Salesman Problem (TSP) is a classic optimization problem in computer science and mathematics.In other words, a salesman needs to visit several cities once and return home, and he wants to minimize the total travel cost or distance.
-Formal Definition
+# Traveling Salesman Problem:
 
-Given:
 
-A set of n vertices (cities).
-A distance (or cost) matrix C[i][j] representing the distance from city i to city j.
+## Problem:
+A salesman is traveling to different cities with different costs. How can we find the path with the most minimum cost that the salesman can take to visit all cities exactly once and come back to the starting point?
+(we must start in a certain city, visit each city exactly once, and return to the starting point)
 
-Find:
+This is also known as a Hamiltonian cycle. In other words, we're asked to find the Hamiltonian cycle (path that visits every node/vertices once) of minimum cost.
 
-A Hamiltonian cycle (a cycle that visits every city exactly once and returns to the start)
-with minimum total cost
 
-### Algorithm
-What programming language and algorithm are we using? Why do we choose that programming language/algorithm? How does the algorithm work?
+## Input and output format:
 
-### Code
-```
-Insert code here.
-```
+### Input:
 
-### Test Case : Input
-```
-Insert input example here.
-```
+`3 `
+`4 `
+`0 1 2 10 `
+`1 2 3 5`
+`2 3 1 7 `
+`3 3 1 2 `
+`1`
 
-### Test Case : Output
-```
-Insert output of the example here.
-Include screenshot if possible.
+- first two lines defines the number of nodes n and number of edges e respectively
+- next e lines consists of set of number denoting: name of edge, two edges that it connects, and its cost
+- last line denotes the starting point (and finishing point) of the TSP/CPP solution.
+- it is illustrated as below:
+(graph example png)
+
+### Ouptut:
+
+`Cost: 17`
+`Route: 0, 1, 3`
+
+- basically, the output of the route will consist of the edges to take that results in the path with the most minimum cost
+
+
+## Our solution + explanation:
+In solving TSP, there are several methods we can use, such as:
+
+### 1. Exact methods:
+- Brute force (trying all possible routes, O(n!))
+- Dynamic programming (Held–Karp algorithm, O(n²·2ⁿ))
+- Branch and bound
+
+### 2. Approximation or heuristic methods:
+- Nearest Neighbor
+- Genetic algorithms
+- Simulated annealing
+- Ant colony optimization
+
+
+Something to note for this problem:
+- has to start and end at the same node, therefore we can't use approaches such as the Nearest Neighbor method, since the results don't align with the given expected output.
+
+
+Since the Brute-Force method isn't a viable solution for large inputs, and given the expected output, we're going to implement the Branch and Bound algorithm, which is a more optimized version of the Brute-Force algorithm.
+
+
+## Code: 
+
+```python
+from math import inf
+
+def tsp_branch_bound_edges(n, e, edges, start):
+    # adjacency list of edge names
+    graph = {i: [] for i in range(1, n + 1)}
+    for edge_name, u, v, cost in edges:
+        graph[u].append((edge_name, v, cost))
+        graph[v].append((edge_name, u, cost))  # undirected
+    
+    min_cost = [inf]
+    best_route = [[]]
+
+    def dfs(current_node, visited_nodes, total_cost, route):
+        # if all nodes are visited and we can return to start
+        if len(visited_nodes) == n:
+            for edge_name, neighbor, cost in graph[current_node]:
+                if neighbor == start:
+                    final_cost = total_cost + cost
+                    if final_cost < min_cost[0]:
+                        min_cost[0] = final_cost
+                        best_route[0] = route + [edge_name]
+            return
+        
+        # pursue path that already exceed best cost
+        if total_cost >= min_cost[0]:
+            return
+        
+        for edge_name, neighbor, cost in graph[current_node]:
+            if neighbor not in visited_nodes:
+                dfs(
+                    neighbor,
+                    visited_nodes | {neighbor},
+                    total_cost + cost,
+                    route + [edge_name]
+                )
+    
+    dfs(start, {start}, 0, [])
+    return min_cost[0], best_route[0]
+
+
+n = int(input().strip()) 
+e = int(input().strip())  
+
+edges = []
+for _ in range(e):
+    edge_data = list(map(int, input().split()))
+    edges.append(tuple(edge_data))  # (edge_name, u, v, cost)
+
+start = int(input().strip()) 
+
+cost, route = tsp_branch_bound_edges(n, e, edges, start)
+
+print("Cost:", cost)
+print("Route:", ", ".join(map(str, route)))
 ```
 
 <br><br>
